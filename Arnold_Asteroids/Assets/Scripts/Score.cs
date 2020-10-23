@@ -6,7 +6,10 @@ public class Score : MonoBehaviour
 {
     // score tracker
     public float score = 0;
-    
+
+
+    private GUIStyle guiStyle = new GUIStyle();
+
 
     private void Start()
     {
@@ -33,7 +36,11 @@ public class Score : MonoBehaviour
 
     private void OnGUI()
     {
-        GUI.Label(new Rect(10, 0, 100, 100), "Score = " + score.ToString());
+        // font-size
+        guiStyle.fontSize = 60;
+        guiStyle.normal.textColor = Color.white;
+
+        GUI.Label(new Rect(10.0f, 0.0f, 1000.0f, 1000.0f), "Score = " + score.ToString(), guiStyle);
     }
 }
 

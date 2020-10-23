@@ -24,17 +24,23 @@ public class ReSpawn : MonoBehaviour
     // int to track how many times the player flashed flashing
     int flashing = 0;
 
+    private GUIStyle guiStyle = new GUIStyle();
+
 
     // print lives left on screen
     private void OnGUI()
     {
+        // font-size
+        guiStyle.fontSize = 60;
+        guiStyle.normal.textColor = Color.white;
+
         // label
-        GUI.Label(new Rect(Screen.width - 150, 0, 100, 100), "Lives = ");
+        GUI.Label(new Rect(Screen.width - 450, 0, 600, 600), "Lives = ", guiStyle);
 
         // Print out lives that are left
         for (int i = 0; i < lives; i++)
         {
-            GUI.DrawTexture(new Rect(Screen.width - 100 + i * 35, 0, 25, 25), lifePoint);
+            GUI.DrawTexture(new Rect(Screen.width - 250 + i * 70, 0, 60, 60), lifePoint);
         }
 
         // game over

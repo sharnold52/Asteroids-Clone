@@ -24,8 +24,11 @@ public class UltimateAbility : MonoBehaviour
     // is ultimate ready?
     public bool ready;
 
-	// Use this for initialization
-	void Start ()
+
+    private GUIStyle guiStyle = new GUIStyle();
+
+    // Use this for initialization
+    void Start ()
     {
         charge = 0;
         ready = false;
@@ -74,14 +77,19 @@ public class UltimateAbility : MonoBehaviour
     // Interface to tell player if ultimate is ready
     private void OnGUI()
     {
-        if(ready)
+        // font-size
+        guiStyle.fontSize = 50;
+        guiStyle.normal.textColor = Color.white;
+
+
+        if (ready)
         {
-            GUI.DrawTexture(new Rect((Screen.width / 2) - 200, 0, charge * 4, Screen.height / 20), barTextureReady);
-            GUI.Label(new Rect((Screen.width / 2) - 100, 0, 200, 200), "Press Down Arrow for Ultimate");
+            GUI.DrawTexture(new Rect((Screen.width / 2) - 400, 0, charge * 8, Screen.height / 14), barTextureReady);
+            GUI.Label(new Rect((Screen.width / 2) - 375, 15, 200, 200), "Press Down Arrow for Ultimate", guiStyle);
         }
         else
         {
-            GUI.DrawTexture(new Rect((Screen.width / 2) - 200, 0, charge * 4, Screen.height / 20), barTexture);
+            GUI.DrawTexture(new Rect((Screen.width / 2) - 400, 0, charge * 8, Screen.height / 14), barTexture);
         }
     }
 

@@ -73,7 +73,7 @@ public class PlayButton : MonoBehaviour
         }
 
         // check for mouse down
-        if(hover && Input.GetMouseButtonDown(0))
+        if(hover && Input.GetAxis("Fire1") > 0)
         {
             SceneManager.LoadScene("game");
         }
