@@ -10,5 +10,8 @@
 # Whitelisted directories/files
 !/ProjectSettings/
 !/Assets/                # Add Assets folder
+!/Build/
+!/TemplateData/
+!/index.html
 
 # Any modules kept in their own git repo.
