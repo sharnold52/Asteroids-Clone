@@ -37,10 +37,10 @@ public class Score : MonoBehaviour
     private void OnGUI()
     {
         // font-size
-        guiStyle.fontSize = 60;
+        guiStyle.fontSize = 25;
         guiStyle.normal.textColor = Color.white;
 
-        GUI.Label(new Rect(10.0f, 0.0f, 1000.0f, 1000.0f), "Score = " + score.ToString(), guiStyle);
+        GUI.Label(new Rect(10.0f, 5.0f, 1000.0f, 1000.0f), "Score = " + score.ToString(), guiStyle);
     }
 }
 

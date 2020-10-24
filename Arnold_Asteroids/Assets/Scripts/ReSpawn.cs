@@ -31,22 +31,22 @@ public class ReSpawn : MonoBehaviour
     private void OnGUI()
     {
         // font-size
-        guiStyle.fontSize = 60;
+        guiStyle.fontSize = 25;
         guiStyle.normal.textColor = Color.white;
 
         // label
-        GUI.Label(new Rect(Screen.width - 450, 0, 600, 600), "Lives = ", guiStyle);
+        GUI.Label(new Rect(Screen.width - 180, 5, 600, 600), "Lives = ", guiStyle);
 
         // Print out lives that are left
         for (int i = 0; i < lives; i++)
         {
-            GUI.DrawTexture(new Rect(Screen.width - 250 + i * 70, 0, 60, 60), lifePoint);
+            GUI.DrawTexture(new Rect(Screen.width - 80 + i * 25, 10, 20, 20), lifePoint);
         }
 
         // game over
         if (gameOver)
         {
-            GUI.DrawTexture(new Rect(Screen.width/2 - 200, Screen.height/2 - 100, 400, 200),gameOverText);
+            GUI.DrawTexture(new Rect(Screen.width/2 - 400, Screen.height/2 - 100, 800, 200),gameOverText);
         }
     }
 
@@ -75,7 +75,8 @@ public class ReSpawn : MonoBehaviour
         {
             Destroy(FindObjectOfType<PlayerMovement>().gameObject);
             gameOver = true;
-            Instantiate(menuButton);
+            GameObject buttonObj = Instantiate(menuButton);
+            buttonObj.transform.position = new Vector3(0.01f, -2.89f, 0f);
         }
     }
 

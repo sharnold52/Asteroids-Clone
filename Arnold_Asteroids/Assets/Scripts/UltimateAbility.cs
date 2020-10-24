@@ -78,18 +78,18 @@ public class UltimateAbility : MonoBehaviour
     private void OnGUI()
     {
         // font-size
-        guiStyle.fontSize = 50;
+        guiStyle.fontSize = 22;
         guiStyle.normal.textColor = Color.white;
 
 
         if (ready)
         {
-            GUI.DrawTexture(new Rect((Screen.width / 2) - 400, 0, charge * 8, Screen.height / 14), barTextureReady);
-            GUI.Label(new Rect((Screen.width / 2) - 375, 15, 200, 200), "Press Down Arrow for Ultimate", guiStyle);
+            GUI.DrawTexture(new Rect((Screen.width / 2) - 200, 5, charge * 4, Screen.height / 18), barTextureReady);
+            GUI.Label(new Rect((Screen.width / 2) - 145, 8, 200, 200), "Press Down Arrow for Ultimate", guiStyle);
         }
         else
         {
-            GUI.DrawTexture(new Rect((Screen.width / 2) - 400, 0, charge * 8, Screen.height / 14), barTexture);
+            GUI.DrawTexture(new Rect((Screen.width / 2) - 200, 0, charge * 4, Screen.height / 18), barTexture);
         }
     }
 
